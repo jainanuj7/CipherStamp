@@ -18,6 +18,7 @@
 				<h1 id="page-title">Block Explorer</h1>
 			</div>
 		</div>
+		<!-- Blockchain Explorer start -->
 		<div class="row">
 			<h3 class="table-title">Blockchain Explorer</h3>
 			<table class="table table-striped" ng-if="blockchain">
@@ -31,39 +32,44 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="block in blockchain">
+					<tr ng-repeat-start="block in blockchain" ng-init="outerIndex = $index">
 						<td>{{ block.index }}</td>
 						<td ng-init="datetime = convertTimestamp(block.timestamp) ">{{ datetime }}</td>
 						<td>{{ block.hash }}</td>
 						<td>{{ block.nonce }}</td>
-						<td>{{ block.transactions.length}} </td>
-						<td colspan="5">
-							<!-- <table class="table table-condensed" ng-if="block.transactions[0].fileHash" ng-repeat="block in blockchain">
-								<thead>
-									<tr>
-										<th>Id</th>
-										<th>File Hash</th>
-										<th>File Name</th>
-										<th>File Size</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr ng-repeat="transaction in block.transactions">
-										<td>{{ transaction.transactionId }}</td>
-										<td>{{ transaction.fileHash }}</td>
-										<td>{{ transaction.fileName }} </td>
-										<td>{{ transaction.fileSize }}</td>
-									</tr>
-								</tbody>
-
-							</table> -->
+						<td>{{ block.transactions.length}}
+							<div class="checkbox">
+								<label><input type="checkbox" value="" ng-model="showTransactions">Show Transactions</label>
+							</div>
 						</td>
+						<tr ng-repeat-end="">
+							<td colspan="5" ng-if="showTransactions">
+								<table class="table table-condensed" ng-if="block.transactions[0].fileHash">
+									<thead>
+										<tr>
+											<th>Id</th>
+											<th>File Hash</th>
+											<th>File Name</th>
+											<th>File Size</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="transaction in block.transactions">
+											<td>{{ transaction.transactionId }}</td>
+											<td>{{ transaction.fileHash }}</td>
+											<td>{{ transaction.fileName }} </td>
+											<td>{{ transaction.fileSize }}</td>
+										</tr>
+									</tbody>
+
+								</table>
+							</td>
+						</tr>
 					</tr>
-				</tr>
 				</tbody>
-
 			</table>
-
+			</div>
+			<!-- Blockchain Explorer end -->
 			<div class="col-md-6 offset-md-3">
 				<form id="uploadForm" enctype="multipart/form-data" action="/upload" method="post">
 					<input type="file" name="userUpload" multiple/>
