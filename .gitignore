@@ -77,3 +77,6 @@ typings/
 
 # uploads directory
 uploads/
+
+# package-lock
+package-lock.json
