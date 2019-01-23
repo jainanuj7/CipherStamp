@@ -68,112 +68,134 @@
 					</tr>
 				</tbody>
 			</table>
-			</div>
-			<!-- Blockchain Explorer end -->
-			<div class="col-md-6 offset-md-3">
-				<form id="uploadForm" enctype="multipart/form-data" action="/upload" method="post">
-					<input type="file" name="userUpload" multiple/>
-					<input type="submit" value="Upload Files" name="submit">
-				</form>
-				<br><br>
-				<form ng-submit="search(searchValue)">
-					<div class="form-group">
-						<input type="text" class="form-control" ng-model="searchValue">
-					</div>
-					<div class="form-group">
-						<select class="form-control" ng-model="searchType">
-							<option value="block">Block Hash</option>
-							<option value="transaction">Transaction ID</option>
-							<option value="address">Address</option>
-						</select>
-					</div>
-					<button type="submit" class="btn btn-primary margin-auto btn-search">
-						Search
-					</button>
-					<p ng-if="!block && !transaction && !addressData && initialSearchMade" class="no-data-text">
-						No data found for search.
-					</p>
-				</form>
-			</div>
 		</div>
+		<!-- Blockchain Explorer end -->
 		<div class="row">
-			<div class="col-md-10 offset-md-1">
+			<h3 class="table-title">Transaction Explorer</h3>
+			<table class="table table-condensed">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>File Hash</th>
+						<th>File Name</th>
+						<th>File Size</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="transaction in transactionList">
+						<td>{{ transaction.transactionId }}</td>
+						<td>{{ transaction.fileHash }}</td>
+						<td>{{ transaction.fileName }} </td>
+						<td>{{ transaction.fileSize }}</td>
+					</tr>
+				</tbody>
 
-				<!-- 'display block' table -->
-				<h3 class="table-title" ng-if="block">Block</h3>
-				<table class="table table-striped" ng-if="block">
-					<tbody>
-						<tr>
-							<td class="bold">Block Hash</td>
-							<td>{{ block.hash }}</td>
-						</tr>
-						<tr>
-							<td class="bold">Index</td>
-							<td>{{ block.index }}</td>
-						</tr>
-						<tr>
-							<td class="bold">Time Stamp</td>
-							<td>{{ block.timestamp }}</td>
-						</tr>
-						<tr>
-							<td class="bold">Nonce</td>
-							<td>{{ block.nonce }}</td>
-						</tr>
-						<tr>
-							<td class="bold">Previous Hash</td>
-							<td>{{ block.previousBlockHash }}</td>
-						</tr>
-						<tr>
-							<td class="bold">Number Transactions</td>
-							<td>{{ block.transactions.length }}</td>
-						</tr>
-					</tbody>
-				</table>
-				<!-- end 'display block' table -->
-
-				<!-- 'display transaction' table -->
-				<h3 class="table-title" ng-if="transaction">Transaction</h3>
-				<table class="table table-striped" ng-if="transaction">
-					<tbody>
-						<tr>
-							<td class="bold">File Hash</td>
-							<td>{{ transaction.fileHash }}</td>
-						</tr>
-						<tr>
-							<td class="bold">File Name</td>
-							<td>{{ transaction.fileName }}</td>
-						</tr>
-						<tr>
-							<td class="bold">File Size (in bytes)</td>
-							<td>{{ transaction.fileSize }}</td>
-						</tr>
-					</tbody>
-				</table>
-				<!-- end 'display transaction' table -->
-
-				<!-- 'display address' table -->
-				<h3 class="table-title" ng-if="addressData">Address</h3>
-				<p id="balance-text" ng-if="addressData">(Balance: {{ addressData.addressBalance }})</p>
-				<table class="table table-striped" ng-if="addressData">
-					<thead>
-						<tr>
-							<th scope="col">Sender</th>
-							<th scope="col">Recipient</th>
-							<th scope="col">Amount</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr ng-repeat="transaction in addressData.addressTransactions">
-							<td>{{ transaction.sender }}</td>
-							<td>{{ transaction.recipient }}</td>
-							<td>{{ transaction.amount }}</td>
-						</tr>
-					</tbody>
-				</table>
-				<!-- end 'display address' table -->
-
-			</div>
+			</table>
 		</div>
+		<div class="col-md-6 offset-md-3">
+			<form id="uploadForm" enctype="multipart/form-data" action="/upload" method="post">
+				<input type="file" name="userUpload" multiple/>
+				<input type="submit" value="Upload Files" name="submit">
+			</form>
+			<br><br>
+			<form ng-submit="search(searchValue)">
+				<div class="form-group">
+					<input type="text" class="form-control" ng-model="searchValue">
+				</div>
+				<div class="form-group">
+					<select class="form-control" ng-model="searchType">
+						<option value="block">Block Hash</option>
+						<option value="transaction">Transaction ID</option>
+						<option value="address">Address</option>
+					</select>
+				</div>
+				<button type="submit" class="btn btn-primary margin-auto btn-search">
+					Search
+				</button>
+				<p ng-if="!block && !transaction && !addressData && initialSearchMade" class="no-data-text">
+					No data found for search.
+				</p>
+			</form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-10 offset-md-1">
+
+			<!-- 'display block' table -->
+			<h3 class="table-title" ng-if="block">Block</h3>
+			<table class="table table-striped" ng-if="block">
+				<tbody>
+					<tr>
+						<td class="bold">Block Hash</td>
+						<td>{{ block.hash }}</td>
+					</tr>
+					<tr>
+						<td class="bold">Index</td>
+						<td>{{ block.index }}</td>
+					</tr>
+					<tr>
+						<td class="bold">Time Stamp</td>
+						<td>{{ block.timestamp }}</td>
+					</tr>
+					<tr>
+						<td class="bold">Nonce</td>
+						<td>{{ block.nonce }}</td>
+					</tr>
+					<tr>
+						<td class="bold">Previous Hash</td>
+						<td>{{ block.previousBlockHash }}</td>
+					</tr>
+					<tr>
+						<td class="bold">Number Transactions</td>
+						<td>{{ block.transactions.length }}</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- end 'display block' table -->
+
+			<!-- 'display transaction' table -->
+			<h3 class="table-title" ng-if="transaction">Transaction</h3>
+			<table class="table table-striped" ng-if="transaction">
+				<tbody>
+					<tr>
+						<td class="bold">File Hash</td>
+						<td>{{ transaction.fileHash }}</td>
+					</tr>
+					<tr>
+						<td class="bold">File Name</td>
+						<td>{{ transaction.fileName }}</td>
+					</tr>
+					<tr>
+						<td class="bold">File Size (in bytes)</td>
+						<td>{{ transaction.fileSize }}</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- end 'display transaction' table -->
+
+			<!-- 'display address' table -->
+			<h3 class="table-title" ng-if="addressData">Address</h3>
+			<p id="balance-text" ng-if="addressData">(Balance: {{ addressData.addressBalance }})</p>
+			<table class="table table-striped" ng-if="addressData">
+				<thead>
+					<tr>
+						<th scope="col">Sender</th>
+						<th scope="col">Recipient</th>
+						<th scope="col">Amount</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="transaction in addressData.addressTransactions">
+						<td>{{ transaction.sender }}</td>
+						<td>{{ transaction.recipient }}</td>
+						<td>{{ transaction.amount }}</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- end 'display address' table -->
+
+		</div>
+	</div>
 	</div>
 
 	<script>
@@ -187,7 +209,14 @@
 			$http.get(`/blockchain`)
 				.then(response => {
 					$scope.blockchain = response.data.chain;
+					$scope.transactionList = [];
+					$scope.blockchain.forEach(block => {
+						block.transactions.forEach(transaction => {
+							$scope.transactionList.push(transaction)
+						})
+					})
 					console.log($scope.blockchain);
+					console.log($scope.transactionList);
 				});
 
 			$scope.fetchBlock = function (blockHash) {
