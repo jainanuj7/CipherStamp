@@ -80,3 +80,6 @@ uploads/
 
 # package-lock
 package-lock.json
+
+# ignore bower dependencies
+dev/client/assets/lib
