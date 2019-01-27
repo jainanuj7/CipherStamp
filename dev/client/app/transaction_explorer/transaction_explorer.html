@@ -1,1 +1,43 @@
-{{1+1}}
+<md-card>
+    <md-toolbar class="md-table-toolbar md-default">
+        <div class="md-toolbar-tools">
+            <span>Transaction Explorer</span>
+            <span flex></span>
+            <md-input-container flex="20">
+                <input name="searchValues" class="md-inverse" ng-model="searchValues">
+                <md-icon class="md-inverse">search</md-icon>
+            </md-input-container>
+        </div>
+    </md-toolbar>
+
+    <md-table-container>
+        <table md-table>
+            <thead md-head>
+                <tr md-row>
+                    <th md-column><span>Transaction ID</span></th>
+                    <th md-column><span></span></th>
+                    <th md-column><span>Timestamp</span></th>
+                    <th md-column><span>File Hash</span></th>
+                    <th md-column><span>File Name</span></th>
+                    <th md-column><span>File Size (in bytes)</span></th>
+                </tr>
+            </thead>
+            <tbody md-body>
+                <tr md-row ng-repeat="transaction in transactionExplorer.transactionList | filter: searchValues">
+                    <td md-cell>{{ transaction.transactionId }} </td>
+                    <td md-cell>
+                        <md-button class="md-icon-button console-buttons md-small" ngclipboard data-clipboard-text="{{transaction.transactionId}}">
+                            <md-icon>
+                                <md-tooltip md-direction="top">Copy to Clipboard</md-tooltip>file_copy
+                            </md-icon>
+                        </md-button>
+                    </td>
+                    <td md-cell>{{ transaction.timestamp | date:'medium' }}</td>
+                    <td md-cell>{{ transaction.fileHash }}</td>
+                    <td md-cell>{{ transaction.fileName }}</td>
+                    <td md-cell>{{ transaction.fileSize }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </md-table-container>
+</md-card>

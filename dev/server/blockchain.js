@@ -31,12 +31,13 @@ Blockchain.prototype.getLastBlock = function () {
     return this.chain[this.chain.length - 1];
 }
 
-Blockchain.prototype.createNewTransaction = function (fileHash, fileSize, fileName) {
+Blockchain.prototype.createNewTransaction = function (fileHash, fileSize, fileName, timestamp) {
     const newTransaction = {
         fileHash: fileHash,
         fileSize: fileSize,
         fileName: fileName,
-        transactionId: uuid().split('-').join('')
+        transactionId: uuid().split('-').join(''),
+        timestamp: timestamp
     };
 
     return newTransaction;

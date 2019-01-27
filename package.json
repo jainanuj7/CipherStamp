@@ -19,6 +19,10 @@
     "uuid": "^3.3.2"
   },
   "devDependencies": {},
+  "nodemonConfig": {
+    "ignore": ["dev/client/*", "uploads/*"],
+    "delay": "2500"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "node_1": "nodemon --watch dev -e js dev/server/networkNode.js 3001 http://localhost:3001",

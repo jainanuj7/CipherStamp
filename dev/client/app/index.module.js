@@ -3,6 +3,8 @@
     angular
         .module('MyBlockchain', [
             'ui.router',
-            'ngMaterial'
+            'ngMaterial',
+            'md.data.table',
+            'ngclipboard'
         ])
 })();
