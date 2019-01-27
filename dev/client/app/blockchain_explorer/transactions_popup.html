@@ -1,0 +1,44 @@
+<md-dialog>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Block Index: {{mdDialogData.blockIndex}}
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Block Timestamp:
+                {{mdDialogData.blockTimestamp | date:'medium'}}
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                No. of Files:
+                {{mdDialogData.blockTransactions.length}}
+            </h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancel()">
+                <md-icon>
+                    <md-tooltip md-direction="right">Close</md-tooltip>close
+                </md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+        <table md-table ng-if="mdDialogData.blockIndex - 1">
+            <thead md-head>
+                <tr md-row>
+                    <th md-column>Transaction ID</th>
+                    <th md-column>File Timestamp</th>
+                    <th md-column>File Hash</th>
+                    <th md-column>File Name</th>
+                    <th md-column>File Size</th>
+                </tr>
+            </thead>
+            <tbody md-body>
+                <tr md-row ng-repeat="transaction in mdDialogData.blockTransactions">
+                    <td md-cell>{{ transaction.transactionId }}</td>
+                    <td md-cell>{{ transaction.timestamp | date:'medium'}}</td>
+                    <td md-cell>{{ transaction.fileHash }}</td>
+                    <td md-cell>{{ transaction.fileName }} </td>
+                    <td md-cell>{{ transaction.fileSize }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 ng-if="!(mdDialogData.blockIndex - 1)">This is the Genesis Block!</h2>
+    </md-dialog-content>
+</md-dialog>

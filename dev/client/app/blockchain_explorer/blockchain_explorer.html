@@ -1,0 +1,43 @@
+<md-card>
+        <md-toolbar class="md-table-toolbar md-default">
+            <div class="md-toolbar-tools">
+                <span>Blockchain Explorer</span>
+                <span flex></span>
+                <md-input-container flex="20">
+                    <input name="searchValues" class="md-inverse" ng-model="searchValues">
+                    <md-icon class="md-inverse">search</md-icon>
+                </md-input-container>
+            </div>
+        </md-toolbar>
+    
+        <md-table-container>
+            <table md-table>
+                <thead md-head>
+                    <tr md-row>
+                        <th md-column><span>Block Index</span></th>
+                        <th md-column><span>Block Timestamp</span></th>
+                        <th md-column><span>Block Hash</span></th>
+                        <th md-column><span>Block Nonce</span></th>
+                        <th md-column><span>No. of Transactions</span></th>
+                        <th md-column><span></span></th>
+                    </tr>
+                </thead>
+                <tbody md-body>
+                    <tr md-row ng-repeat="block in blockchainExplorer.blockchain | filter: searchValues">
+                        <td md-cell>{{ block.index }} </td>
+                        <td md-cell>{{ block.timestamp | date:'medium' }}</td> 
+                        <td md-cell>{{ block.hash }}</td>  
+                        <td md-cell>{{ block.nonce }}</td>
+                        <td md-cell>{{ block.transactions.length }}</td>
+                        <td md-cell>
+                            <md-button class="md-icon-button console-buttons md-small" ng-click="blockchainExplorer.showTransactions(block.index, block.timestamp, block.transactions)">
+                                <md-icon>
+                                    <md-tooltip md-direction="top">Show Transactions</md-tooltip>assignment
+                                </md-icon>
+                            </md-button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </md-table-container>
+    </md-card>

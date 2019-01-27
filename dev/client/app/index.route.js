@@ -12,6 +12,12 @@
             controller: 'transactionExplorerCtrl',
             controllerAs: 'transactionExplorer'
           })
+          .state('blockchain-explorer', {
+            url: '/blockchain-explorer',
+            templateUrl: 'app/blockchain_explorer/blockchain_explorer.html',
+            controller: 'blockchainExplorerCtrl',
+            controllerAs: 'blockchainExplorer'
+          })
           .state('upload-files', {
             url: '/upload-files',
             templateUrl: 'app/upload_files/upload_files.html',

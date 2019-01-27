@@ -41,15 +41,6 @@
       }
       return comparison * -1;
     }
-
-    self.copyTransactionId = function (transactionId) {
-      var copyText = document.getElementById("trxId");
-      console.log(copyText)
-      // copyText.select();
-      // console.log(copyText.value);
-      // document.execCommand("copy");
-    }
-
   }
 })();
 
