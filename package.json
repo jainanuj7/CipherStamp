@@ -18,7 +18,10 @@
   },
   "devDependencies": {},
   "nodemonConfig": {
-    "ignore": ["dev/client/*", "uploads/*"],
+    "ignore": [
+      "dev/client/*",
+      "uploads/*"
+    ],
     "delay": "2500"
   },
   "scripts": {
