@@ -1,0 +1,52 @@
+<md-dialog>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Transaction ID: {{mdDialogData.fileInfo.transactionId}}
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                File Timestamp:
+                {{mdDialogData.fileInfo.timestamp | date:'medium'}}
+            </h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancel()">
+                <md-icon>
+                    <md-tooltip md-direction="right">Close</md-tooltip>close
+                </md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+        
+        <input type="file" file-model="myFile" name="userUpload" ng-show="showUploadButton"/><br><br>
+        <button ng-click="uploadFile()" ng-show="showUploadButton">Upload</button> 
+
+        <md-table-container>
+            <table md-table ng-if="!showUploadButton">
+                <thead md-head>
+                    <tr md-row>
+                        <th md-column><span></span></th>
+                        <th md-column><span>Original File</span></th>
+                        <th md-column><span>Current File</span></th>
+                    </tr>
+                </thead>
+                <tbody md-body>
+                    <tr md-row>
+                        <td md-cell><b>File Hash</b></td>
+                        <td md-cell >{{ mdDialogData.fileInfo.fileHash }} </td>
+                        <td md-cell ng-style="hashColor">{{ newData.data.fileHash }} </td>
+                    </tr>
+                    <tr md-row>
+                        <td md-cell><b>File Name</b></td>
+                        <td md-cell>{{ mdDialogData.fileInfo.fileName }} </td>
+                        <td md-cell ng-style="nameColor">{{ newData.data.fileName }} </td>
+                    </tr>
+                    <tr md-row>
+                        <td md-cell><b>File Size</b></td>
+                        <td md-cell>{{ mdDialogData.fileInfo.fileSize }} bytes</td>
+                        <td md-cell ng-style="sizeColor">{{ newData.data.fileSize }} bytes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </md-table-container>
+    </md-dialog-content>
+</md-dialog>

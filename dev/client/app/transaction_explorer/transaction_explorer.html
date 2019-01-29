@@ -19,7 +19,8 @@
                     <th md-column><span>Timestamp</span></th>
                     <th md-column><span>File Hash</span></th>
                     <th md-column><span>File Name</span></th>
-                    <th md-column><span>File Size (in bytes)</span></th>
+                    <!-- <th md-column><span>File Size (in bytes)</span></th> -->
+                    <th md-column><span></span></th>
                 </tr>
             </thead>
             <tbody md-body>
@@ -35,7 +36,14 @@
                     <td md-cell>{{ transaction.timestamp | date:'medium' }}</td>
                     <td md-cell>{{ transaction.fileHash }}</td>
                     <td md-cell>{{ transaction.fileName }}</td>
-                    <td md-cell>{{ transaction.fileSize }}</td>
+                    <!-- <td md-cell>{{ transaction.fileSize }}</td> -->
+                    <td md-cell>
+                        <md-button class="md-icon-button console-buttons md-small" ng-click="transactionExplorer.verifyFile(transaction)">
+                            <md-icon>
+                                <md-tooltip md-direction="top">Verify File</md-tooltip>security
+                            </md-icon>
+                        </md-button>
+                    </td>
                 </tr>
             </tbody>
         </table>

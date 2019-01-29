@@ -3,7 +3,7 @@
     .module('MyBlockchain')
     .controller('transactionExplorerCtrl', transactionExplorerCtrl)
 
-  function transactionExplorerCtrl($http, $scope, $interval) {
+  function transactionExplorerCtrl($http, $interval, $mdDialog) {
     var self = this;
     self.blockchain = [];
 
@@ -41,6 +41,17 @@
       }
       return comparison * -1;
     }
+
+    self.verifyFile = function (fileInfo) {
+      data = { fileInfo : fileInfo};
+      $mdDialog.show({
+        controller: 'verifyFileCtrl',
+        templateUrl: 'app/transaction_explorer/verify_popup.html',
+        locals: { dataToPass: data },
+        parent: angular.element(document.body),
+        clickOutsideToClose: true,
+      })
+    };
   }
 })();
 
