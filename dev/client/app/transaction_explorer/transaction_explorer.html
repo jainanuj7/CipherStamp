@@ -11,13 +11,13 @@
     </md-toolbar>
 
     <md-table-container>
-        <table md-table>
+        <table md-table class="table table-hover">
             <thead md-head>
                 <tr md-row>
                     <th md-column><span>Transaction ID</span></th>
                     <th md-column><span></span></th>
                     <th md-column><span>Timestamp</span></th>
-                    <th md-column><span>File Hash</span></th>
+                    <!-- <th md-column><span>File Hash</span></th> -->
                     <th md-column><span>File Name</span></th>
                     <!-- <th md-column><span>File Size (in bytes)</span></th> -->
                     <th md-column><span></span></th>
@@ -34,7 +34,7 @@
                         </md-button>
                     </td>
                     <td md-cell>{{ transaction.timestamp | date:'medium' }}</td>
-                    <td md-cell>{{ transaction.fileHash }}</td>
+                    <!-- <td md-cell>{{ transaction.fileHash }}</td> -->
                     <td md-cell>{{ transaction.fileName }}</td>
                     <!-- <td md-cell>{{ transaction.fileSize }}</td> -->
                     <td md-cell>
