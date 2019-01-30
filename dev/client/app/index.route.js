@@ -3,7 +3,7 @@
   angular
     .module('MyBlockchain')
     .config(function ($stateProvider, $urlRouterProvider) {
-      $urlRouterProvider.otherwise("/transaction-explorer");
+      $urlRouterProvider.otherwise("/menu/transaction-explorer");
 
       $stateProvider
         .state('menu', {
