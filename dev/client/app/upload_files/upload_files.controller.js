@@ -5,6 +5,7 @@
 
   function uploadFilesCtrl($scope, $http) {
     var self = this;
+    $scope.duplicate = -1;
     $scope.uploadFile = function () {
 
       var file = $scope.myFile;
@@ -20,8 +21,13 @@
         transformRequest: angular.identity,
         headers: { 'Content-Type': undefined }
       })
-        .then(data => {
-          console.log(data);
+        .then(uploadRes => {
+          $scope.duplicateFiles = uploadRes.data.info;
+          console.log(uploadRes.data);
+          if(uploadRes.data.note == 'Transaction already exists')
+            $scope.duplicate = 1;
+          else
+            $scope.duplicate = 0;
         })
     };
   }
