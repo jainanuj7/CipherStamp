@@ -24,10 +24,18 @@
         .then(uploadRes => {
           $scope.duplicateFiles = uploadRes.data.info;
           console.log(uploadRes.data);
-          if(uploadRes.data.note == 'Transaction already exists')
+          if (uploadRes.data.note == 'Transaction already exists')
             $scope.duplicate = 1;
-          else
-            $scope.duplicate = 0;
+          else {
+            $http({
+              method: 'POST',
+              url: '/generateQRCode',
+              data: JSON.stringify(uploadRes.data)
+            })
+            .then(function(qrRes) {
+              $scope.duplicate = 0;
+            })
+          }
         })
     };
   }

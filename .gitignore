@@ -76,7 +76,7 @@ typings/
 .fusebox/
 
 # uploads directory
-uploads/
+#uploads/
 
 # package-lock
 package-lock.json
