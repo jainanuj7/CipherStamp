@@ -32,12 +32,37 @@
               url: '/generateQRCode',
               data: JSON.stringify(uploadRes.data)
             })
-            .then(function(qrRes) {
-              $scope.duplicate = 0;
-            })
+              .then(function (qrRes) {
+                $scope.duplicate = 0;
+                $scope.newBlockHash = uploadRes.data.blockHash;
+              })
           }
         })
     };
+
+    $scope.downloadQRCode = function () {
+      console.log("called");
+      $http({
+        method: 'GET',
+        url: '/downloadQRcode?blockHash=' + $scope.newBlockHash,
+        headers: {
+          'Content-Type': 'image/png',
+        },
+        responseType: 'blob' 
+      }).then(function(downloadRes) {
+        var file = new Blob([downloadRes.data], {
+          type: 'image/png'
+      });
+      var fileURL = URL.createObjectURL(file);
+      var a = document.createElement('a');
+      a.href = fileURL;
+      a.target = '_blank';
+      a.download = $scope.newBlockHash + '.png';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      })
+    }
   }
 })();
 

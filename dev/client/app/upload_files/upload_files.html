@@ -26,6 +26,7 @@
     <md-form>
             <input type="file" file-model="myFile" name="userUpload" multiple/><br><br>
             <md-button ng-click="uploadFile()">Upload</md-button>
+            <md-button ng-click="downloadQRCode()" ng-if="newBlockHash">Download QR Code</md-button>
     </md-form>
 
     <p><h3 ng-if="duplicate==0">Block created successfully. Browse the blockchain explorer for details!</h3></p>
