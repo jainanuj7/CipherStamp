@@ -7,6 +7,7 @@
     "body-parser": "^1.18.3",
     "bower": "^1.8.8",
     "express": "^4.16.4",
+    "file-encryptor": "^0.1.1",
     "hasha": "^3.0.0",
     "multer": "^1.4.1",
     "nodemon": "^1.18.6",
