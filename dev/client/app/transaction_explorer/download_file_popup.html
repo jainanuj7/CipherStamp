@@ -1,0 +1,24 @@
+<md-dialog>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Transaction ID: {{mdDialogData.fileInfo.transactionId}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                File Timestamp: {{mdDialogData.fileInfo.timestamp | date:'medium'}}
+            </h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancel()">
+                <md-icon>
+                    <md-tooltip md-direction="right">Close</md-tooltip>close
+                </md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+        <br>
+        Enter Secret Key:
+        <textarea name="secretKey" ng-model="secretKey" rows="3" cols="120"></textarea> <br>
+        <md-button ng-click="decryptDownload()">
+            Decrypt & Download
+        </md-button>
+    </md-dialog-content>
+</md-dialog>

@@ -21,6 +21,7 @@
                     <th md-column><span>File Name</span></th>
                     <!-- <th md-column><span>File Size (in bytes)</span></th> -->
                     <th md-column><span></span></th>
+                    <th md-column><span></span></th>
                 </tr>
             </thead>
             <tbody md-body>
@@ -40,7 +41,14 @@
                     <td md-cell>
                         <md-button class="md-icon-button console-buttons md-small" ng-click="transactionExplorer.verifyFile(transaction)">
                             <md-icon>
-                                <md-tooltip md-direction="top">Verify File</md-tooltip>security
+                                <md-tooltip md-direction="top">Verify File</md-tooltip>vpn_key
+                            </md-icon>
+                        </md-button>
+                    </td>
+                    <td md-cell>
+                        <md-button class="md-icon-button console-buttons md-small" ng-click="transactionExplorer.downloadFile(transaction)">
+                            <md-icon>
+                                <md-tooltip md-direction="top">Download File</md-tooltip>cloud_download
                             </md-icon>
                         </md-button>
                     </td>

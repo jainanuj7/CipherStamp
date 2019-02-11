@@ -52,6 +52,17 @@
         clickOutsideToClose: true,
       })
     };
+
+    self.downloadFile = function (fileInfo) {
+      data = { fileInfo : fileInfo};
+      $mdDialog.show({
+        controller: 'downloadFileCtrl',
+        templateUrl: 'app/transaction_explorer/download_file_popup.html',
+        locals: { dataToPass: data },
+        parent: angular.element(document.body),
+        clickOutsideToClose: true,
+      })
+    };
   }
 })();
 
