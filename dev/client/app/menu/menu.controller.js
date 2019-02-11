@@ -4,7 +4,8 @@
         .module('MyBlockchain')
         .controller('MenuCtrl', MenuCtrl);
 
-    function MenuCtrl($scope, navService,) {
+    function MenuCtrl($scope, navService) {
+        
         $scope.menuItems = [];
         navService.loadMenuItems()
             .then(function(menuItems) {
