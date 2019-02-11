@@ -76,10 +76,10 @@ typings/
 .fusebox/
 
 # uploads directory
-uploads/
+# uploads/
 
 # QRcodes directory
-QRcodes/
+# QRcodes/
 
 # package-lock
 package-lock.json
