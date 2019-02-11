@@ -7,13 +7,33 @@
     </md-toolbar>
 
     <md-form>
-            <input type="file" file-model="myFile" name="userUpload" multiple/><br><br>
-            <md-button ng-click="uploadFile()">Upload</md-button>
-            <md-button ng-click="downloadQRCode()" ng-if="newBlockHash">Download QR Code</md-button>
+        <input type="file" file-model="myFile" name="userUpload" multiple/><br><br>
+        <md-button ng-click="uploadFile()">Upload</md-button>
+        <md-button ng-click="downloadQRCode()" ng-if="newBlockHash">Download QR Code</md-button>
     </md-form>
 
-    <p><h3 ng-if="duplicate==0">Block created successfully. Browse the blockchain explorer for details!</h3></p>
-    <p><h3 ng-if="duplicate==1">File already exists on the blockchain!</h3></p>
+    <div layout="row" ng-if="secretKey">
+        <div flex="90">
+            <md-input-container class="md-block">
+                <label>Your Secret Key</label>
+                <input name="secretKey" ng-model="secretKey">
+            </md-input-container>
+        </div>
+        <div flex="10">
+            <md-button class="md-icon-button console-buttons md-small" ngclipboard data-clipboard-text="{{secretKey}}">
+                <md-icon>
+                    <md-tooltip md-direction="top">Copy to Clipboard</md-tooltip>file_copy
+                </md-icon>
+            </md-button>
+        </div>
+    </div>
+
+    <p>
+        <h3 ng-if="duplicate==0">Block created successfully. Browse the blockchain explorer for details!</h3>
+    </p>
+    <p>
+        <h3 ng-if="duplicate==1">File already exists on the blockchain!</h3>
+    </p>
     <md-table-container ng-if="duplicate==1">
         <table md-table class="table table-hover">
             <thead md-head>
@@ -28,7 +48,7 @@
             </thead>
             <tbody md-body>
                 <tr md-row ng-repeat="file in duplicateFiles">
-                        <td md-cell>{{ file.blockNumber }} </td>
+                    <td md-cell>{{ file.blockNumber }} </td>
                     <td md-cell>{{ file.transactionId }} </td>
                     <td md-cell>
                         <md-button class="md-icon-button console-buttons md-small" ngclipboard data-clipboard-text="{{file.transactionId}}">

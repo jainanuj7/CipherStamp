@@ -33,15 +33,22 @@
           }
           $scope.showUploadButton = false;
           $scope.determineColor();
+          $http({
+            method: 'GET',
+            url: '/deleteFile?fileName=' + './uploads/verify/'+ $scope.newData.data.fileName
+          })
         })
     };
 
     $scope.determineColor = function () {
+      if($scope.mdDialogData.fileInfo.fileHash == $scope.newData.data.fileHash)
+        $scope.integrity = true;
+      else
+        $scope.tampered = true;
       if ($scope.mdDialogData.fileInfo.fileHash == $scope.newData.data.fileHash)
         $scope.hashColor = {'color':'green'};
-      else {
+      else
         $scope.hashColor = {'color':'red'};
-      console.log("red")}
       if ($scope.mdDialogData.fileInfo.fileName == $scope.newData.data.fileName)
         $scope.nameColor = {'color':'green'}
       else

@@ -16,7 +16,7 @@
         data: { fileName: $scope.mdDialogData.fileInfo.fileName, key: $scope.secretKey }
       })
         .then(function (decryptRes) {
-          console.log(decryptRes);
+          //console.log(decryptRes);
           if (decryptRes.data.note == 'Decrypted successfully') {
             $scope.invalidKey = false;
             $http({
@@ -24,7 +24,7 @@
               url: '/downloadFile?fileName=' + decryptRes.data.fileName,
               responseType: 'blob'
             }).then(function (downloadRes) {
-              console.log(downloadRes)
+              //console.log(downloadRes)
               var file = new Blob([downloadRes.data], {
                 type: downloadRes.data.type
               });
@@ -38,7 +38,7 @@
               document.body.removeChild(a);
               $http({
                 method: 'GET',
-                url: '/deleteFile?fileName=' + decryptRes.data.fileName
+                url: '/deleteFile?fileName=' + './uploads/decrypt/'+ decryptRes.data.fileName
               })
             })
           }

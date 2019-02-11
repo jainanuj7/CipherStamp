@@ -27,6 +27,7 @@
           if (uploadRes.data.note == 'Transaction already exists')
             $scope.duplicate = 1;
           else {
+            $scope.secretKey = uploadRes.data.key;
             $http({
               method: 'POST',
               url: '/generateQRCode',
@@ -41,7 +42,6 @@
     };
 
     $scope.downloadQRCode = function () {
-      console.log("called");
       $http({
         method: 'GET',
         url: '/downloadQRcode?blockHash=' + $scope.newBlockHash,

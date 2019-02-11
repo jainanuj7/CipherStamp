@@ -19,7 +19,8 @@
         
         <input type="file" file-model="myFile" name="userUpload" ng-show="showUploadButton"/><br><br>
         <button ng-click="uploadFile()" ng-show="showUploadButton">Upload</button> 
-
+        <h3 ng-if="integrity">File Integrity is maintained!</h3>
+        <h3 ng-if="tampered">File is tampered!</h3>
         <md-table-container>
             <table md-table ng-if="!showUploadButton">
                 <thead md-head>
