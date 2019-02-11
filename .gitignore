@@ -76,7 +76,7 @@ typings/
 .fusebox/
 
 # uploads directory
-# uploads/
+uploads/
 
 # QRcodes directory
 QRcodes/
