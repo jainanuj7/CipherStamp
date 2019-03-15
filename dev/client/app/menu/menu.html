@@ -2,15 +2,25 @@
     <md-button ng-repeat-start="item in menuItems" layout="row" layout-align="center center" flex class="capitalize" ng-click=""
         ui-sref-active="md-warn" ui-sref="{{item.sref}}">
         <md-tooltip md-direction="right">{{item.name}}</md-tooltip>
-            
-            <i class="material-icons md-36">{{item.icon}}</i>
+        <i class="material-icons md-36">{{item.icon}}</i>
     </md-button>
     <md-divider ng-repeat-end></md-divider>
 
 </md-sidenav>
 
 <div layout="column" flex>
-    <md-content flex class="md-padding page-content">
-        <div ui-view></div>
-    </md-content>
-</div>
+    <md-toolbar layout="row" layout-align="end center">
+        <section layout-align="center center">
+            <md-button class="md-icon-button console-buttons md-small" ng-click="redirectHome()">
+                <md-icon>
+                    <md-tooltip md-direction="left">Home</md-tooltip>home
+                </md-icon>
+            </md-button>
+        </section>
+    </md-toolbar>
+
+    <div layout="column" flex>
+        <md-content flex class="md-padding page-content">
+            <div ui-view></div>
+        </md-content>
+    </div>
