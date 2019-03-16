@@ -22,6 +22,8 @@
     "angular-aria": "1.6.5",
     "ngstorage": "^0.3.11",
     "angular-material-data-table": "^0.10.10",
-    "ngclipboard": "^2.0.0"
+    "ngclipboard": "^2.0.0",
+    "ngmap": "^1.18.4",
+    "ngGeolocation": "^0.0.8"
   }
 }

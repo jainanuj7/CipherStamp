@@ -3,11 +3,48 @@
     .module('MyBlockchain')
     .controller('uploadFilesCtrl', uploadFilesCtrl)
 
-  function uploadFilesCtrl($scope, $http) {
+  function uploadFilesCtrl($scope, $http, $geolocation, $q) {
     var self = this;
     $scope.duplicate = -1;
-    $scope.uploadFile = function () {
 
+    var deferred;
+
+$scope.currentPosition = function() {
+    deferred = $q.defer();
+
+    if (window.navigator && window.navigator.geolocation) {
+        window.navigator.geolocation.getCurrentPosition(currentPosition, handleError);
+    } else {
+        deferred.reject({msg: "Browser does not supports HTML5 geolocation"});
+    }
+    return deferred.promise;
+};
+
+function currentPosition(position) {
+    deferred.resolve({latitude: position.coords.latitude, longitude: position.coords.longitude});
+}
+
+function handleError(error) {
+    deferred.reject({msg: error.message});
+}
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    $scope.uploadFile = function () {
+      $scope.currentPosition().then(function(data) {
+        console.log(data.latitude, data.longitude);
+       
+    $scope.location = { latitude: data.latitude, longitude: data.longitude};
       var file = $scope.myFile;
       console.log(file)
       var uploadUrl = "/upload";
@@ -17,9 +54,11 @@
 
       });
 
+      fd.append('data', angular.toJson($scope.location));
       $http.post(uploadUrl, fd, {
         transformRequest: angular.identity,
-        headers: { 'Content-Type': undefined }
+        headers: { 'Content-Type': undefined },
+         
       })
         .then(uploadRes => {
           $scope.duplicateFiles = uploadRes.data.info;
@@ -39,6 +78,7 @@
               })
           }
         })
+      }); 
     };
 
     $scope.downloadQRCode = function () {

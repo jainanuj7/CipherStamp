@@ -5,7 +5,9 @@
             'ui.router',
             'ngMaterial',
             'md.data.table',
-            'ngclipboard'
+            'ngclipboard',
+            'ngMap',
+            'ngGeolocation'
         ])
         .directive('fileModel', ['$parse', function ($parse) {
             return {

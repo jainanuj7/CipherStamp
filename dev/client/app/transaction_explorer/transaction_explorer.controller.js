@@ -63,6 +63,17 @@
         clickOutsideToClose: true,
       })
     };
+
+    self.fileLocation = function (fileInfo) {
+      data = { fileInfo : fileInfo};
+      $mdDialog.show({
+        controller: 'locationCtrl',
+        templateUrl: 'app/transaction_explorer/location_popup.html',
+        locals: { dataToPass: data },
+        parent: angular.element(document.body),
+        clickOutsideToClose: true,
+      })
+    };
   }
 })();
 
