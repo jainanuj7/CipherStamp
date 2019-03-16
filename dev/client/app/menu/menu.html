@@ -1,4 +1,4 @@
-<md-sidenav md-is-locked-open="$mdMedia('gt-md')" md-component-id="left" class="md-whiteframe-z2 md-sidenav-left">
+<!-- <md-sidenav md-is-locked-open="$mdMedia('gt-md')" md-component-id="left" class="md-whiteframe-z2 md-sidenav-left">
     <md-button ng-repeat-start="item in menuItems" layout="row" layout-align="center center" flex class="capitalize" ng-click=""
         ui-sref-active="md-warn" ui-sref="{{item.sref}}">
         <md-tooltip md-direction="right">{{item.name}}</md-tooltip>
@@ -6,15 +6,32 @@
     </md-button>
     <md-divider ng-repeat-end></md-divider>
 
-</md-sidenav>
+</md-sidenav> -->
 
 <div layout="column" flex>
-    <md-toolbar layout="row" layout-align="end center">
+    <md-toolbar layout="row" layout-align="space-around center">
         <section layout-align="center center">
-            <md-button class="md-icon-button console-buttons md-small" ng-click="redirectHome()">
-                <md-icon>
-                    <md-tooltip md-direction="left">Home</md-tooltip>home
-                </md-icon>
+            <md-button class="md-icon-button console-buttons" ng-click="redirectHome()">
+                <i class="material-icons md-36">home</i>
+                <md-tooltip md-direction="top">Home</md-tooltip>
+            </md-button>
+        </section>
+        <section layout-align="center center">
+            <md-button class="md-icon-button console-buttons" ng-click="redirectState('menu.blockchain-explorer')">
+                <i class="material-icons md-36">dashboard</i>
+                <md-tooltip md-direction="top">Blockchain Explorer</md-tooltip>
+            </md-button>
+        </section>
+        <section layout-align="center center">
+            <md-button class="md-icon-button console-buttons" ng-click="redirectState('menu.transaction-explorer')">
+                <i class="material-icons md-36">security</i>
+                <md-tooltip md-direction="top">Transaction Explorer</md-tooltip>
+            </md-button>
+        </section>
+        <section layout-align="center center">
+            <md-button class="md-icon-button console-buttons" ng-click="redirectState('menu.upload-files')">
+                <i class="material-icons md-36">backup</i>
+                <md-tooltip md-direction="top">Upload Files</md-tooltip>
             </md-button>
         </section>
     </md-toolbar>
