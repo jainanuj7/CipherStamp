@@ -7,7 +7,7 @@ function Blockchain() {
     this.pendingTransactions = [];
     this.currentNodeUrl = currentNodeUrl;
     this.networkNodes = [];
-    this.createNewBlock(100, '0', '0'); //genisis block 
+    this.createNewBlock(100, '0', '0');
 }
 
 Blockchain.prototype.createNewBlock = function (nonce, previousBlockHash, hash) {
@@ -19,16 +19,9 @@ Blockchain.prototype.createNewBlock = function (nonce, previousBlockHash, hash) 
         hash: hash,
         previousBlockHash: previousBlockHash
     };
-
     this.pendingTransactions = [];
     this.chain.push(newBlock);
-
     return newBlock;
-
-}
-
-Blockchain.prototype.getLastBlock = function () {
-    return this.chain[this.chain.length - 1];
 }
 
 Blockchain.prototype.createNewTransaction = function (fileHash, fileSize, fileName, timestamp, fileExtension, location) {
@@ -43,6 +36,10 @@ Blockchain.prototype.createNewTransaction = function (fileHash, fileSize, fileNa
     };
 
     return newTransaction;
+}
+
+Blockchain.prototype.getLastBlock = function () {
+    return this.chain[this.chain.length - 1];
 }
 
 Blockchain.prototype.addTransactionToPendingTransactions = function(transactionObj) {

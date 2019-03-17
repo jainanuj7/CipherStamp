@@ -82,7 +82,7 @@ h1, h2, h3, h4, h5, h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  padding: 30px 0;
+  padding: 15px 0;
   height: 92px;
   position: fixed;
   left: 0;
@@ -666,10 +666,85 @@ body.mobile-nav-active #mobile-nav-toggle {
   line-height: 24px;
 }
 
+
+/* Services Section
+--------------------------------*/
+#faq {
+  background: #fff;
+  background-size: cover;
+  padding: 80px 0 60px 0;
+}
+
+#faq .box {
+  padding: 50px 20px;
+  margin-bottom: 50px;
+  text-align: center;
+  border: 1px solid #e6e6e6;
+  height: 270px;
+  position: relative;
+  background: #fafafa;
+}
+
+#faq .icon {
+  position: absolute;
+  top: -36px;
+  left: calc(50% - 36px);
+  transition: 0.2s;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 72px;
+  height: 72px;
+  background: #2dc997;
+}
+
+#faq .icon a {
+  display: inline-block;
+}
+
+#faq .icon i {
+  color: #fff;
+  font-size: 24px;
+}
+
+#faq .box:hover .icon {
+  background: #fff;
+  border: 2px solid #2dc997;
+}
+
+#faq .box:hover .icon i {
+  color: #2dc997;
+}
+
+#faq .box:hover .icon a {
+  color: #2dc997;
+}
+
+#faq .title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  margin-top: 0px; 
+}
+
+#faq .title a {
+  color: #111;
+}
+
+#faq .description {
+  font-size: 14px;
+  line-height: 24px;
+}
+
 /* Call To Action Section
 --------------------------------*/
 #call-to-action {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/call-to-action-bg.jpg) fixed center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../img/call-to-action-bg.jpg) fixed center center;
   background-size: cover;
   padding: 80px 0;
 }
