@@ -9,42 +9,38 @@
 
     var deferred;
 
-$scope.currentPosition = function() {
-    deferred = $q.defer();
+    $scope.currentPosition = function () {
+      deferred = $q.defer();
 
-    if (window.navigator && window.navigator.geolocation) {
+      if (window.navigator && window.navigator.geolocation) {
         window.navigator.geolocation.getCurrentPosition(currentPosition, handleError);
-    } else {
-        deferred.reject({msg: "Browser does not supports HTML5 geolocation"});
+      } else {
+        deferred.reject({ msg: "Browser does not supports HTML5 geolocation" });
+      }
+      return deferred.promise;
+    };
+
+    function currentPosition(position) {
+      deferred.resolve({ latitude: position.coords.latitude, longitude: position.coords.longitude });
     }
-    return deferred.promise;
-};
 
-function currentPosition(position) {
-    deferred.resolve({latitude: position.coords.latitude, longitude: position.coords.longitude});
-}
+    function handleError(error) {
+        $scope.location = { latitude: 360, longitude: 360 };
+        $scope.uploadFileProceed();
 
-function handleError(error) {
-    deferred.reject({msg: error.message});
-}
+      deferred.reject({ msg: error.message });
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-    
     $scope.uploadFile = function () {
-      $scope.currentPosition().then(function(data) {
+      $scope.currentPosition().then(function (data) {
         console.log(data.latitude, data.longitude);
-       
-    $scope.location = { latitude: data.latitude, longitude: data.longitude};
+        $scope.location = { latitude: data.latitude, longitude: data.longitude };
+        $scope.uploadFileProceed();
+      });
+    }
+
+    $scope.uploadFileProceed = function () {
+
       var file = $scope.myFile;
       console.log(file)
       var uploadUrl = "/upload";
@@ -58,7 +54,7 @@ function handleError(error) {
       $http.post(uploadUrl, fd, {
         transformRequest: angular.identity,
         headers: { 'Content-Type': undefined },
-         
+
       })
         .then(uploadRes => {
           $scope.duplicateFiles = uploadRes.data.info;
@@ -78,7 +74,6 @@ function handleError(error) {
               })
           }
         })
-      }); 
     };
 
     $scope.downloadQRCode = function () {
@@ -88,19 +83,19 @@ function handleError(error) {
         headers: {
           'Content-Type': 'image/png',
         },
-        responseType: 'blob' 
-      }).then(function(downloadRes) {
+        responseType: 'blob'
+      }).then(function (downloadRes) {
         var file = new Blob([downloadRes.data], {
           type: 'image/png'
-      });
-      var fileURL = URL.createObjectURL(file);
-      var a = document.createElement('a');
-      a.href = fileURL;
-      a.target = '_blank';
-      a.download = $scope.newBlockHash + '.png';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
+        });
+        var fileURL = URL.createObjectURL(file);
+        var a = document.createElement('a');
+        a.href = fileURL;
+        a.target = '_blank';
+        a.download = $scope.newBlockHash + '.png';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
       })
     }
   }

@@ -17,7 +17,8 @@
     </md-toolbar>
 
     <md-dialog-content>
-        <ng-map style="height:500px; width: 99%;" center="[{{mdDialogData.fileInfo.location.latitude}}, {{mdDialogData.fileInfo.location.longitude}}]" zoom="10" default-style="false">
+        <h2 ng-if="!locationPermission">User Denied GeoLocation Permission</h2>
+        <ng-map ng-if="locationPermission" style="height:500px; width: 99%;" center="[{{mdDialogData.fileInfo.location.latitude}}, {{mdDialogData.fileInfo.location.longitude}}]" zoom="10" default-style="false">
             <marker position="{{mdDialogData.fileInfo.location.latitude}}, {{mdDialogData.fileInfo.location.longitude}}" icon="{url:'assets/img/marker.png',scaledSize:[20,30]}">
             </marker>
             <info-window id="about-markers-2">
