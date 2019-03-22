@@ -24,6 +24,11 @@
     "angular-material-data-table": "^0.10.10",
     "ngclipboard": "^2.0.0",
     "ngmap": "^1.18.4",
-    "ngGeolocation": "^0.0.8"
+    "ngGeolocation": "^0.0.8",
+    "superfish": "^1.7.10",
+    "waypoints": "^4.0.1",
+    "Font-Awesome": "^5.8.1",
+    "wow": "^1.1.2",
+    "bootstrap": "^4.3.1"
   }
 }
