@@ -85,4 +85,24 @@ QRcodes/
 package-lock.json
 
 # ignore bower dependencies
-dev/client/assets/lib
+dev/client/assets/lib/ngGeolocation
+dev/client/assets/lib/ngmap
+dev/client/assets/lib/clipboard
+dev/client/assets/lib/ngclipboard
+dev/client/assets/lib/cryptojslib
+dev/client/assets/lib/angular-material-sidemenu
+dev/client/assets/lib/angular-cryptography
+dev/client/assets/lib/angular-material-data-table
+dev/client/assets/lib/angular-resource
+dev/client/assets/lib/ngstorage
+dev/client/assets/lib/angular-material
+dev/client/assets/lib/angular-ui-router
+dev/client/assets/lib/angular
+dev/client/assets/lib/angular-animate
+dev/client/assets/lib/angular-aria
+dev/client/assets/lib/angular-messages
+dev/client/assets/lib/Font-Awesome
+dev/client/assets/lib/waypoints
+dev/client/assets/lib/superfish
+dev/client/assets/lib/wow
+dev/client/assets/lib/bootstrap

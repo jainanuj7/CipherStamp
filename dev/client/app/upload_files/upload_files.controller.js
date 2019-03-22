@@ -3,7 +3,7 @@
     .module('MyBlockchain')
     .controller('uploadFilesCtrl', uploadFilesCtrl)
 
-  function uploadFilesCtrl($scope, $http, $geolocation, $q) {
+  function uploadFilesCtrl($scope, $http, $geolocation, $q, toastService) {
     var self = this;
     $scope.duplicate = -1;
 
@@ -25,6 +25,7 @@
     }
 
     function handleError(error) {
+        toastService.Notify('Location will not be tracked!')
         $scope.location = { latitude: 360, longitude: 360 };
         $scope.uploadFileProceed();
 
@@ -96,7 +97,12 @@
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
+        toastService.Notify('QR Code download started..')
       })
+    }
+
+    $scope.copyNotify = function(parameter) {
+      toastService.Notify(parameter + ' copied! Do not share this key with anyone!')
     }
   }
 })();

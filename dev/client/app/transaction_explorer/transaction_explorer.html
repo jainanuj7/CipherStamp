@@ -29,7 +29,7 @@
                 <tr md-row ng-repeat="transaction in transactionExplorer.transactionList | filter: searchValues">
                     <td md-cell>{{ transaction.transactionId }} </td>
                     <td md-cell>
-                        <md-button class="md-icon-button console-buttons md-small" ngclipboard data-clipboard-text="{{transaction.transactionId}}">
+                        <md-button class="md-icon-button console-buttons md-small" ngclipboard data-clipboard-text="{{transaction.transactionId}}" ng-click="copyNotify('Transaction ID')">
                             <md-icon>
                                 <md-tooltip md-direction="top">Copy to Clipboard</md-tooltip>file_copy
                             </md-icon>

@@ -3,7 +3,7 @@
     .module('MyBlockchain')
     .controller('downloadFileCtrl', downloadFileCtrl)
 
-  function downloadFileCtrl($scope, $mdDialog, dataToPass, $http) {
+  function downloadFileCtrl($scope, $mdDialog, dataToPass, $http, toastService) {
     var self = this;
     $scope.mdDialogData = dataToPass;
     $scope.invalidKey = false;
@@ -40,6 +40,7 @@
                 method: 'GET',
                 url: '/deleteFile?fileName=' + './uploads/decrypt/'+ decryptRes.data.fileName
               })
+              toastService.Notify('Dowloading your file securely')
             })
           }
 

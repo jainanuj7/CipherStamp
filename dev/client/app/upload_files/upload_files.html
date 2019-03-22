@@ -20,7 +20,7 @@
             </md-input-container>
         </div>
         <div flex="10">
-            <md-button class="md-icon-button console-buttons md-small" ngclipboard data-clipboard-text="{{secretKey}}">
+            <md-button class="md-icon-button console-buttons md-small" ngclipboard data-clipboard-text="{{secretKey}}" ng-click="copyNotify('Secret Key')">
                 <md-icon>
                     <md-tooltip md-direction="top">Copy to Clipboard</md-tooltip>file_copy
                 </md-icon>

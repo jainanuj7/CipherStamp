@@ -3,7 +3,7 @@
     .module('MyBlockchain')
     .controller('transactionExplorerCtrl', transactionExplorerCtrl)
 
-  function transactionExplorerCtrl($http, $interval, $mdDialog) {
+  function transactionExplorerCtrl($http, $interval, $mdDialog, toastService, $scope) {
     var self = this;
     self.blockchain = [];
 
@@ -74,6 +74,10 @@
         clickOutsideToClose: true,
       })
     };
+
+    $scope.copyNotify = function(parameter) {
+      toastService.Notify(parameter + ' copied!');
+    }
   }
 })();
 
