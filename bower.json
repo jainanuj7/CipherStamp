@@ -27,7 +27,6 @@
     "ngGeolocation": "^0.0.8",
     "superfish": "^1.7.10",
     "waypoints": "^4.0.1",
-    "Font-Awesome": "^5.8.1",
     "wow": "^1.1.2",
     "bootstrap": "^4.3.1"
   }
