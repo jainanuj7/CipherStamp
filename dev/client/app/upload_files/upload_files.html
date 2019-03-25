@@ -28,6 +28,19 @@
         </div>
     </div>
 
+    <div layout="row" ng-if="secretKey">
+        <div flex="90">
+            <md-input-container class="md-block">
+                <label>Email me my secret key (optional) </label>
+                <input name="email" ng-model="emailId">
+            </md-input-container>
+        </div>
+        <div flex="10">
+            <md-button ng-click="sendEmail(emailId)">Send Email</md-button>
+        </div>
+    </div>
+
+
     <p>
         <h3 ng-if="duplicate==0">Block created successfully. Browse the blockchain explorer for details!</h3>
     </p>
