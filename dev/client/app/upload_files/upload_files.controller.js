@@ -107,7 +107,7 @@
     }
 
     $scope.sendEmail = function(emailId) {
-      var message = 'Thank you for using CipherStamp. \n\nNOTE: DO NOT SHARE YOUR SECRET KEY WITH ANYONE. \n\nTimestamp: ' + new Date() + '\n\n\nYou uploaded the following files: '
+      var message = 'Thank you for using CipherStamp. \n\nNOTE: DO NOT SHARE YOUR SECRET KEY WITH ANYONE. \n\nSecret Key:\n'+ $scope.secretKey +'\n\nTimestamp: ' + new Date() + '\n\n\nYou uploaded the following files: '
       //console.log(uploadResults);
       var index = 0;
       uploadResults.transactions.forEach(transaction =>{
