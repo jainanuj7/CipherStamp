@@ -105,3 +105,5 @@ dev/client/assets/lib/waypoints
 dev/client/assets/lib/superfish
 dev/client/assets/lib/wow
 dev/client/assets/lib/bootstrap
+
+dev/server/networkNode.js
