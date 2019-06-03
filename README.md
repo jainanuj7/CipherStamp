@@ -26,15 +26,17 @@ Additionally, there is no guarantee that a carefully and meticulously performed 
 ![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/0architecture.jpg) <br /><br /><br /><br />
 
 # Application Screenshots
+__1. Application Overview__ <br />
 ![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/1overview.JPG) <br /><br />
+__2. Upload your file__ <br />
 ![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/2upload.JPG) <br /><br />
 ![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/3upload_success.JPG) <br /><br />
 ![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/4mail.JPG) <br /><br />
 ![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/5transaction_explorer.JPG) <br /><br />
 ![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/6block_explorer.JPG) <br /><br />
 ![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/7integrity.JPG) <br /><br />
-![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/8download.JPG) <br /><br />
-![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/9location.JPG) <br /><br />
+![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/8download.png) <br /><br />
+![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/9location.jpeg) <br /><br />
 ![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/10blockchain_raw.JPG) <br /><br />
 
 
