@@ -26,18 +26,49 @@ Additionally, there is no guarantee that a carefully and meticulously performed 
 ![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/0architecture.jpg) <br /><br /><br /><br />
 
 # Application Screenshots
-__1. Application Overview__ <br />
+__1. Application Overview__ <br /><br />
 ![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/1overview.JPG) <br /><br />
-__2. Upload your file__ <br />
-![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/2upload.JPG) <br /><br />
-![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/3upload_success.JPG) <br /><br />
-![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/4mail.JPG) <br /><br />
-![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/5transaction_explorer.JPG) <br /><br />
-![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/6block_explorer.JPG) <br /><br />
-![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/7integrity.JPG) <br /><br />
-![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/8download.png) <br /><br />
-![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/9location.jpeg) <br /><br />
-![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/10blockchain_raw.JPG) <br /><br />
+__2. Upload your file__ <br /><br />
+![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/2upload.JPG) <br /><br /><br /><br />
+__3. Block created successfully on blockchain and private key is generated__ <br /><br />
+![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/3upload_success.JPG) <br /><br /><br /><br />
+__4. Email shared (optional) which contains private key and trasnaction details__ <br /><br />
+![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/4email.JPG) <br /><br /><br /><br />
+__5. Transaction Explorer__ <br /><br />
+![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/5transaction_explorer.JPG) <br /><br /><br /><br />
+__6. Block Explorer__ <br /><br />
+![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/6block_explorer.JPG) <br /><br /><br /><br />
+__7. Verifying whether a file uplaoded on the blockchain has been tampered__ <br /><br />
+![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/7integrity.JPG) <br /><br /><br /><br />
+__8. Securely downloading your files using private key__ <br /><br />
+![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/8download.png) <br /><br /><br /><br />
+__9. Location based timestamping__ <br /><br />
+![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/9location.jpeg) <br /><br /><br /><br />
+__10. Heart of the application; the raw blockchain__ <br /><br />
+![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/10blockchain_raw.JPG) <br /><br /><br /><br />
+
+# Prerequisites for running this application on your own machine
+1. NodeJs v8.x+<br />
+2. Web browser<br /><br />
+
+# Steps to run
+1. Clone this repository using ```git clone https://github.com/jainanuj7/CipherStamp.git``` or alternative download zip<br />
+2. Browse into the folder where _package.json_ is present<br />
+3. Install required packages ```npm install```<br />
+4. Install _bower_ package globally ```npm install bower -g```<br />
+5. Install frontend dependencies ```bower install```<br />
+6. Run the application ```npm run node_1```<br />
+7. Browse _localhost:3001_<br /><br />
+
+### NOTE: This project was developed as B.E. Final Year Major Project under University of Pune (SPPU). For respecting the hard work of developers, all the APIs have been removed from the repository. Drop me an email at _lookforaj@gmail.com_ to know more about the APIs and complete report/documentation of the project
+
+# Research Paper Publication
+
+__Conference Name__: 4th International Conference on Internet of things, Next Generation Networks and Cloud Computing<br /><br />
+__Paper Title__: Verifying the Integrity of Digital Files Using Decentralized Timestamping on Blockchain<br />
+__Paper Id__: 50<br />
+__Paper status__: – _ACCEPTED_<br /><br />
+https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/VERIFYING_THE_INTEGRITY_OF_DIGITAL_FILES_USING_DECENTRALIZED_TIMESTAMPING_ON_THE_BLOCKCHAIN.pdf
 
 
 
