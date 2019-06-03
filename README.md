@@ -23,10 +23,20 @@ Currently, there is no simple, cost-effective and automated method available to 
 Additionally, there is no guarantee that a carefully and meticulously performed fraudulent modification of metadata or video frames will be discovered. A secure and cost-effective method is needed to allow anyone to verify that a video file has not been tampered with after a claimed date. To address this scenario, we introduce a mobile application that acts as a dashboard camera, which automatically creates a tamperproof distributed trusted timestamp on the Bitcoin blockchain for video files recorded during a collision. <br /><br />
 
 # System Architecture
-![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/0architecture.jpg) <br /><br />
+![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/0architecture.jpg) <br /><br /><br /><br />
 
 # Application Screenshots
-![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/0architecture.jpg) <br /><br />
+![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/1overview.JPG) <br /><br />
+![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/2upload.JPG) <br /><br />
+![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/3upload_success.JPG) <br /><br />
+![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/4mail.JPG) <br /><br />
+![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/5transaction_explorer.JPG) <br /><br />
+![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/6block_explorer.JPG) <br /><br />
+![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/7integrity.JPG) <br /><br />
+![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/8download.JPG) <br /><br />
+![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/9location.JPG) <br /><br />
+![alt text](https://github.com/jainanuj7/CipherStamp/blob/master/screenshots/10blockchain_raw.JPG) <br /><br />
+
 
 
 
