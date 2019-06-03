@@ -52,7 +52,7 @@ __10. Heart of the application; the raw blockchain__ <br /><br />
 2. Web browser<br /><br />
 
 # Steps to run
-1. Clone this repository using ```git clone https://github.com/jainanuj7/CipherStamp.git``` or alternative download zip<br />
+1. Clone this repository using ```git clone https://github.com/jainanuj7/CipherStamp.git``` or alternatively download zip<br />
 2. Browse into the folder where _package.json_ is present<br />
 3. Install required packages ```npm install```<br />
 4. Install _bower_ package globally ```npm install bower -g```<br />
@@ -64,7 +64,7 @@ __10. Heart of the application; the raw blockchain__ <br /><br />
 
 # Research Paper Publication
 
-__Conference Name__: 4th International Conference on Internet of things, Next Generation Networks and Cloud Computing<br /><br />
+__Conference Name__: 4th International Conference on Internet of things, Next Generation Networks and Cloud Computing<br />
 __Paper Title__: Verifying the Integrity of Digital Files Using Decentralized Timestamping on Blockchain<br />
 __Paper Id__: 50<br />
 __Paper status__: – _ACCEPTED_<br /><br />
