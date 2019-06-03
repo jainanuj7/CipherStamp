@@ -2,7 +2,7 @@
 ✅📂⛓️ Verifying the integrity of digital files using Decentralized Timestamping on the Blockchain <br />
 Deployed with ❤️ on Heroku https://cipherstamp.herokuapp.com/ <br /><br />
 
-__Note: It is currently deployed on a free tier of Heroku, therefore the dyno sleeps due to inactivity. This resets the blockchain and track of old files are lost.__
+__Note: It is currently deployed on a free tier of Heroku, therefore the dyno sleeps due to inactivity. This resets the blockchain and track of old files is lost.__
 
 # Why Cipherstamp?
 1. Hassle free timestamping of all type of media files <br />
